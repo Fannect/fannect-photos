@@ -32,7 +32,8 @@ app.use express.bodyParser()
 app.use require("connect-assets")()
 app.use express.static path.join __dirname, "../public"
 
-# Controllers
+# Routes
+app.get "/", (req, res, next) -> res.redirect("http://fannect.me")
 app.get "/:highlight_id", (req, res, next) ->
    highlight_id = req.params.highlight_id
    
@@ -42,7 +43,7 @@ app.get "/:highlight_id", (req, res, next) ->
    fannect.request
       url: "/v1/highlights/#{highlight_id}"
    , (err, highlight) ->
-
+      return next() if err or not highlight
       now = new Date()
       date = new Date(parseInt(highlight._id.substring(0,8), 16) * 1000)
       time = dateFormat(date, "h:MM TT")

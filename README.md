@@ -1,7 +1,6 @@
-Fannect Greek
-=============
+# Fannect Photos
 
-Fannect leaderboard for university Greek life
+Fan Highlights photo viewer
 
 # Environmental Variables
 * LOGIN_URL
