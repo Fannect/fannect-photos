@@ -1,0 +1,53 @@
+.verified-icon
+   display:none
+   background: url(../images/verified.png) no-repeat
+   background-size: 205px 25px
+   width: 30px
+   height: 25px
+
+   &.player-basketball
+   &.coach-basketball
+      display:block
+      background-position: 0 0 
+
+   &.fannect-squad
+      display:block
+      background-position: -35px 0 
+
+   &.player-football
+   &.coach-football
+      display:block
+      background-position: -70px 0 
+
+   &.player-soccer
+   &.coach-soccer
+      display:block
+      background-position: -105px 0 
+
+   &.player-baseball
+   &.coach-baseball
+      display:block
+      background-position: -140px 0 
+
+   &.authority-all
+   &.authority-football
+   &.authority-baseball
+   &.authority-basketball
+   &.authority-soccer
+   &.authority-hockey
+      display:block
+      background-position: -175px 0 
+
+
+.verified-badge
+   line-height: 25px
+   height: 25px
+   .verified-icon
+      float: left
+   .verified-text
+      margin-left: 32px 
+      font-size: 13px
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5)
+   .verified-icon
+      background-image: url(../images/verified/Listview@2x.png)!important

@@ -1,0 +1,44 @@
+doctype 5
+html
+   head
+      title Fannect - Fan Highlights
+      meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+      meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+      
+      != css("main")
+
+      //- script(type="text/javascript")
+      //-    if (!window.fannect) window.fannect = {}
+      //-    window.fannect.groups = !{JSON.stringify(groups)}
+      //-    window.fannect.config = !{JSON.stringify(config)}
+   
+      //- != js("lib/d3.v3.js")
+      //- != js("site")
+
+   - var viewDir = locals.settings.views;
+   - var view = locals.filename.replace(viewDir, "").replace(".jade", "").replace(/^[\\\/]/g, "");
+   - var pageClass = view.replace(/[\\\/]/g, "-") + "-page";
+   
+   body
+      .header
+         .logo
+
+      .content
+         .highlight
+            .meta-wrap
+               .image-wrap
+                  img.profile-image(src="#{highlight.owner_profile_image_url}")
+                  .cover
+                  .verified-icon(class="#{highlight.owner_verified}")
+               .owner= highlight.owner_name
+               .team= highlight.team_name
+
+            .image-border
+               .image-container
+                  img.highlight-image(src="#{highlight.image_url}")
+               .caption= highlight.caption || '[no caption]'
+               .date= highlight.date_text
+
+      .footer
+         a.download-button(href="http://get.fannect.me")
+         .copyright Copyright 2013 Fannect LLC. All Rights Reserved
