@@ -1,9 +1,8 @@
-doctype 5
-html
-   head
-      title Fannect Greek Battle
-      meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-      meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
-   body 
-      .error Hit an error.... 
-      .message= error.stack
+extend layout
+
+block content
+   .highlight
+      .image-border
+         .image-container
+            img.highlight-image(src="/images/404@2x.jpg")
+         .caption Looks like this photo no longer exists!

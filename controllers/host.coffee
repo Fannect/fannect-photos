@@ -63,7 +63,7 @@ app.get "/:highlight_id", (req, res, next) ->
       highlight.image_url = getUrl(highlight.image_url, 848, 848)
       highlight.owner_profile_image_url = getUrl(highlight.owner_profile_image_url, 86, 86)
      
-      res.render "layout", { highlight: highlight }
+      res.render "highlight", { highlight: highlight }
 
 getUrl = (url, w, h, quality = 85) ->
       return "" if url == "" 
@@ -71,5 +71,8 @@ getUrl = (url, w, h, quality = 85) ->
       parsed = url.split("/")
       parsed[parsed.length - 2] = "q_#{quality},w_#{w},h_#{h}"
       return parsed.join("/")
+
+app.get "*", (req, res) ->
+   res.render "error"
 
 

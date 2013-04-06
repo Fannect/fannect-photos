@@ -1,0 +1,17 @@
+extend layout
+
+block content
+   .highlight
+      .meta-wrap
+         .image-wrap
+            img.profile-image(src="#{highlight.owner_profile_image_url}")
+            .cover
+            .verified-icon(class="#{highlight.owner_verified}")
+         .owner= highlight.owner_name
+         .team= highlight.team_name
+
+      .image-border
+         .image-container
+            img.highlight-image(src="#{highlight.image_url}")
+         .caption= highlight.caption || '[no caption]'
+         .date= highlight.date_text
